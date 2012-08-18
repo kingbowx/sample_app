@@ -29,10 +29,10 @@ group :development do
   gem 'activerecord-jdbcmysql-adapter'
   gem 'rspec-rails', '2.6.0'
 end
-
 group :test do
   gem 'activerecord-jdbc-adapter'
   gem 'activerecord-jdbcmysql-adapter'
   gem 'rspec', '2.6.0'
   gem 'webrat'
+  gem 'factory_girl_rails', '1.0'
 end

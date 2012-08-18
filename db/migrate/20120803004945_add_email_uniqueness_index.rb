@@ -1,5 +1,6 @@
 class AddEmailUniquenessIndex < ActiveRecord::Migration
   def self.up
+    # to avoid the case where user click submit twice when sign up
     add_index :users, :email, :unique => true
   end
 
