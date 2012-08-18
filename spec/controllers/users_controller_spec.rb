@@ -21,7 +21,7 @@ describe UsersController do
     end
     
     it "should be success" do
-      get :show, :id => @user
+      get :show, :id => @usr
       response.should be_success
     end
     
@@ -36,6 +36,16 @@ describe UsersController do
       # 'assigns' is a RSpec facility from Test::Unit library
       # takes a symbol and returns the value of the corresponding instance variable in the controller action
       assigns(:user).should == @usr
+    end
+    
+    it "should include the user's name'" do
+      get :show, :id => @usr
+      response.should have_selector("h1", :content =>@usr.name)
+    end
+    
+    it "should have a profile image" do
+      get :show, :id => @usr
+      response.should have_selector("h1>img", :class => "gravatar")
     end
   end
 end
