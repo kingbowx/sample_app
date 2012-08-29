@@ -126,4 +126,15 @@ describe User do
       end
     end
   end # "password encryptions"
+  
+  describe "POST 'create" do
+    before(:each) do
+      @fail_attr = {:name =>"fail", :email => "abc@def.com", :password => "", :password_confirmation => ""}
+    end
+    it "should not create a user" do
+      lamda do
+        post :create, :user => @fail_attr
+      end.should_not change(User, :count)
+    end
+  end
 end

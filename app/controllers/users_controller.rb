@@ -1,11 +1,27 @@
 class UsersController < ApplicationController
   def new
-    @title = "Sign up Now!"
+    @title = title_text
+    @user = User.new
   end
   
   def show
     @user = User.find(params[:id])
     @title = @user.name
+  end
+  
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      # save successfully
+    else
+      @title = title_text
+      render 'new'
+    end
+  end
+
+private
+  def title_text
+    "Sign up"
   end
 
 end

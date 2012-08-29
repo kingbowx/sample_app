@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       self.encrypted_password = encrypt(password)
     end
     
-    def encrypt(string)    # only a temp impl
+    def encrypt(string)
       secure_hash("#{salt}--#{string}")
     end
     

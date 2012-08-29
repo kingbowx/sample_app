@@ -109,9 +109,8 @@ footer {
 	margin-right: auto;
 }
 
-footer nav ul {
-	width: 710px;
-	float: center;
+footer nav {
+	float: none;
 }
 
 /* User show page */
@@ -135,4 +134,8 @@ td.sidebar {
 .profile img.gravatar {
     border: 1px solid #999;
     margin-bottom: -15px;
+}
+
+div.field, div.actions {
+	margin_bottom: 10px;
 }
