@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
 gem 'gravatar_image_tag', '0.1.0'
+gem 'will_paginate', '3.0.pre2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,6 +30,7 @@ group :development do
   gem 'activerecord-jdbc-adapter'
   gem 'activerecord-jdbcmysql-adapter'
   gem 'rspec-rails', '2.6.0'
+  gem 'faker', '0.3.1' # to fake many users
 end
 group :test do
   gem 'activerecord-jdbc-adapter'

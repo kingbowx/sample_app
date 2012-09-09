@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :name,  :presence => true,
                     :length => { :maximum => 50 }
 
-  email_regex = /\A[\w+.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  email_regex = /\A[\w+.-]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false}
@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
     user = find_by_id(id)
     (user && user.salt = cookie_salt) ? user : nil
   end
+
   private
     def encrypt_password
       self.salt = make_salt if new_record?
